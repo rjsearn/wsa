@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>WSARegScreens</title>
+<meta name="robots" content="NOFOLLOW">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:image" content />
+<meta property="og:title" content="WSARegScreens" />
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+      background-color: #FFFFF1; /* Gray background color */
+    }
+
+    #image-container {
+      text-align: center;
+      position: relative;
+    }
+
+    #frame {
+      width: 720px;
+      height: 420px;
+      overflow: hidden;
+      border: 1px solid #ccc; /* 1px light grey border */
+      margin-bottom: 20px;
+      position: relative;
+      padding: 7px;
+      background-color: #FFFFF1;
+      border-radius: 15px;
+      box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    #image-container img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      margin: auto;
+    }
+
+    #clickable-link {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #FF0000;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 30px;
+      font-family: 'Bowlby One', cursive;
+      text-shadow: 2px 0px 1px rgb(0, 0, 0);
+    }
+
+    #buttons-container {
+      display: flex;
+      max-width: 100%;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    #previous-btn,
+    #next-btn {
+      padding: 10px;
+      font-size: 15px;
+      font: bold;
+      border-radius: 7px;
+      cursor: pointer;
+      
+    }
+
+    #previous-btn {
+      background-color: #f44336;
+      color: #fff;
+      border: none;
+      border: 1px solid #FFFFFF;
+      box-shadow: 1px 1px 0px  	#F5F5F5;
+    }
+
+    #next-btn {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border: 1px solid #FFFFFF;
+      box-shadow: 1px 1px 0px  	#F5F5F5;
+    }
+
+
+
+.wrap {
+    margin:2px auto 0;
+    max-width: 250px;
+}
+
+.telegram {
+  margin-bottom: 10px;
+}
+.telegram a {
+  display: block;
+  background-color: #E9967A;
+  border-radius: 7px;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+}
+.telegram .tg-icon {
+  float: left;
+  width: 7px;
+  height: 8px;
+  background-size: cover;
+  background-image: url("https://qayoutube.com/telegram.svg");
+  position: relative;
+  z-index: 10;
+}
+.telegram .tg-text {
+  overflow: hidden;
+  color: #fff;
+  font-size: 20px;
+  line-height: 18px;
+  font-weight: bold;
+  padding: 5px 5px;
+  position: relative;
+  z-index: 10;
+  text-shadow: #FFBF00;
+}
+.telegram .cloud {
+  width: 7px;
+  height: 8px;
+  display: block;
+  background-size: cover;
+  background-image: url("https://qayoutube.com/cloud.svg");
+  position: absolute;
+}
+.x1,
+.x2,
+.x3,
+.x4,
+.x5 {
+  position: absolute;
+  display: block;
+}
+@-webkit-keyframes animateCloud {
+  0% {
+    margin-left: -100px;
+  }
+  100% {
+    margin-left: 100%;
+  }
+}
+
+@-moz-keyframes animateCloud {
+  0% {
+    margin-left: -100px;
+  }
+  100% {
+    margin-left: 100%;
+  }
+}
+
+@keyframes animateCloud {
+  0% {
+    margin-left: -100px;
+  }
+  100% {
+    margin-left: 100%;
+  }
+}
+
+/* ANIMATIONS */
+
+.x1 {
+  -webkit-animation: animateCloud 35s linear infinite;
+  -moz-animation: animateCloud 35s linear infinite;
+  animation: animateCloud 35s linear infinite;
+
+  -webkit-transform: scale(0.7);
+  -moz-transform: scale(0.7);
+  transform: scale(0.7);
+  top: 10px;
+}
+
+.x2 {
+  -webkit-animation: animateCloud 20s linear infinite;
+  -moz-animation: animateCloud 20s linear infinite;
+  animation: animateCloud 20s linear infinite;
+
+  -webkit-transform: scale(0.4);
+  -moz-transform: scale(0.4);
+  transform: scale(0.4);
+  top: 20px;
+}
+
+.x3 {
+  -webkit-animation: animateCloud 30s linear infinite;
+  -moz-animation: animateCloud 30s linear infinite;
+  animation: animateCloud 30s linear infinite;
+
+  -webkit-transform: scale(0.6);
+  -moz-transform: scale(0.6);
+  transform: scale(0.6);
+  top: 25px;
+}
+
+.x4 {
+  -webkit-animation: animateCloud 18s linear infinite;
+  -moz-animation: animateCloud 18s linear infinite;
+  animation: animateCloud 18s linear infinite;
+
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  transform: scale(0.5);
+  top: 10px;
+}
+
+.x5 {
+  -webkit-animation: animateCloud 25s linear infinite;
+  -moz-animation: animateCloud 25s linear infinite;
+  animation: animateCloud 25s linear infinite;
+
+  -webkit-transform: scale(0.55);
+  -moz-transform: scale(0.55);
+  transform: scale(0.55);
+  top: 30px;
+}
+
+
+  </style>
+</head>
+<body>
+
+<div id="image-container">
+  
+<div class="wrap">
+<div class="telegram">
+  <a href="https://t.me/+ATdWQ5nmfPcxZGJl" target="_blank">
+    <div class="tg-icon"></div>
+    <div class="tg-text">CONTACT here for HELP</div>
+    <div class="x1"><div class="cloud"></div></div>
+    <div class="x2"><div class="cloud"></div></div>
+    <div class="x3"><div class="cloud"></div></div>
+    <div class="x4"><div class="cloud"></div></div>
+    <div class="x5"><div class="cloud"></div></div>
+  </a>
+</div>
+</div>
+
+
+  
+<div id="frame">
+    <img id="current-image" src="" alt="Image">
+    <a href="https://llpgpro.com/WSARegTB/" id="clickable-link" target="_blank">Click to Open Registration Page</a>
+</div>
+
+<div id="buttons-container">
+    <button id="previous-btn" onclick="showPreviousImage()"><b>PREVIOUS<b></button>
+    <button id="next-btn" onclick="showNextImage()"><b>NEXT SCREEN<b></button>
+</div>
+
+</div>
+<br>
+<br>
+<br>
+<script>
+  const imageLinks = [
+    "https://i.imgur.com/9fzOwAA.png",
+    "https://i.imgur.com/wG1cdwp.png",
+    "https://i.imgur.com/hHSO6ox.png",
+    "https://i.imgur.com/aPU9aPE.png",
+    "https://i.imgur.com/z6vugDr.png",
+    "https://i.imgur.com/mOwOmWs.png",
+    "https://i.imgur.com/H1XYKQw.png",
+    "https://i.imgur.com/r5ntsUN.png",
+    "https://i.imgur.com/vqNj3BG.png",
+    "https://i.imgur.com/wgTTcD8.png",
+    "https://i.imgur.com/uPSHBpf.png",
+    "https://i.imgur.com/kI2nAAw.png",
+    "https://i.imgur.com/BJXzfpF.png",
+    "https://i.imgur.com/ie4WDQ3.png",
+    "https://i.imgur.com/hsSQtTt.png",
+    "https://i.imgur.com/H63Jr16.png",
+    "https://i.imgur.com/XNogp94.png",    
+    "https://i.imgur.com/P3iPyS1.png",
+    "https://i.imgur.com/XGF9Dgz.png",
+    "https://i.imgur.com/uzpMTNY.png",
+    "https://i.imgur.com/qzx4Exx.png",
+    "https://i.imgur.com/aAIjhG9.png",
+    "https://i.imgur.com/6R2lUBb.png",
+    "https://i.imgur.com/0n7pOMP.png"
+  ];
+
+  let currentIndex = 0;
+  let isButtonDisabled = false;
+  const currentImage = document.getElementById('current-image');
+  const previousButton = document.getElementById('previous-btn');
+  const nextButton = document.getElementById('next-btn');
+  const clickableLink = document.getElementById('clickable-link');
+  const frame = document.getElementById('frame');
+
+  function showImage(index) {
+    currentImage.src = imageLinks[index];
+    currentIndex = index;
+
+    previousButton.style.display = (currentIndex === 0) ? 'none' : 'block';
+    nextButton.style.display = (currentIndex === imageLinks.length - 1) ? 'none' : 'block';
+    clickableLink.style.display = (currentIndex === imageLinks.length - 1) ? 'block' : 'none';
+    frame.style.display = 'block';
+  }
+
+  function showNextImage() {
+    if (!isButtonDisabled) {
+      isButtonDisabled = true;
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % imageLinks.length;
+        showImage(currentIndex);
+        isButtonDisabled = false;
+      }, 300);
+    }
+  }
+
+  function showPreviousImage() {
+    if (!isButtonDisabled) {
+      isButtonDisabled = true;
+      setTimeout(() => {
+        currentIndex = (currentIndex - 1 + imageLinks.length) % imageLinks.length;
+        showImage(currentIndex);
+        isButtonDisabled = false;
+      }, 300);
+    }
+  }
+
+  // Initial load with the first image
+  showImage(currentIndex);
+
+  // Event listeners
+  nextButton.addEventListener('click', function() {
+    if (currentIndex === imageLinks.length - 1) {
+      // Last image screen, reset to the first image
+      setTimeout(() => {
+        showImage(0);
+      }, 300);
+    } else {
+      // Normal next image
+      showNextImage();
+    }
+  });
+</script>
+
+</body>
+</html>
