@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>WSAScreens</title>
-<meta name="robots" content="NOFOLLOW">
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta property="og:image" content />
-<meta property="og:title" content="WSAScreens" />
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      display: flex;
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Rotator</title>
+    <style>
+        body {
+            display: flex;
       align-items: center;
       justify-content: center;
       height: 100vh;
@@ -22,13 +16,19 @@
       background-color: #FFFFF1; /* Gray background color */
     }
 
-    #image-container {
+       #image-container {
       text-align: center;
       position: relative;
     }
+       #image-container img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      margin: auto;
+    }
 
-    #frame {
-      width: 720px;
+ #image-frame {
+            width: 720px;
       height: 420px;
       overflow: hidden;
       border: 1px solid #ccc; /* 1px light grey border */
@@ -38,67 +38,15 @@
       background-color: #FFFFF1;
       border-radius: 15px;
       box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
+        }
 
-    #image-container img {
-      max-width: 100%;
-      max-height: 100%;
-      display: block;
-      margin: auto;
-    }
-
-    #clickable-link {
-      display: none;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #FF0000;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 30px;
-      font-family: 'Bowlby One', cursive;
-      text-shadow: 2px 0px 1px rgb(0, 0, 0);
-    }
-
-    #buttons-container {
-      display: flex;
-      max-width: 100%;
-      justify-content: space-between;
-      position: relative;
-    }
-
-    #previous-btn,
-    #next-btn {
-      padding: 10px;
-      font-size: 15px;
-      font: bold;
-      border-radius: 7px;
-      cursor: pointer;
-      
-    }
-
-    #previous-btn {
-      background-color: #f44336;
-      color: #fff;
-      border: none;
-      border: 1px solid #FFFFFF;
-      box-shadow: 1px 1px 0px  	#F5F5F5;
-    }
-
-    #next-btn {
-      background-color: #4CAF50;
-      color: #fff;
-      border: none;
-      border: 1px solid #FFFFFF;
-      box-shadow: 1px 1px 0px  	#F5F5F5;
-    }
+       
 
 
 
 .wrap {
     margin:2px auto 0;
-    max-width: 250px;
+    max-width: 350px;
 }
 
 .telegram {
@@ -233,17 +181,51 @@
 }
 
 
-  </style>
+        #controls {
+            display: flex;
+      max-width: 100%;
+      justify-content: space-between;
+      position: relative;
+        }
+
+
+    #prevBtn,
+    #nextBtn {
+      padding: 10px;
+      font-size: 15px;
+      font: bold;
+      border-radius: 7px;
+      cursor: pointer;
+      
+    }
+
+    #prevBtn {
+      background-color: #f44336;
+      color: #fff;
+      border: none;
+      border: 1px solid #FFFFFF;
+      box-shadow: 1px 1px 0px  	#F5F5F5;
+    }
+
+    #nextBtn {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border: 1px solid #FFFFFF;
+      box-shadow: 1px 1px 0px  	#F5F5F5;
+    }
+
+
+    </style>
 </head>
 <body>
-
 <div id="image-container">
-  
+
 <div class="wrap">
 <div class="telegram">
   <a href="https://t.me/+ATdWQ5nmfPcxZGJl" target="_blank">
     <div class="tg-icon"></div>
-    <div class="tg-text">CONTACT here for HELP</div>
+    <div class="tg-text">Contact for HELP & Future Earnings</div>
     <div class="x1"><div class="cloud"></div></div>
     <div class="x2"><div class="cloud"></div></div>
     <div class="x3"><div class="cloud"></div></div>
@@ -253,25 +235,22 @@
 </div>
 </div>
 
+<br>
 
-  
-<div id="frame">
-    <img id="current-image" src="" alt="Image">
-    <a href="https://rjsearn.github.io/wsa/regtest" id="clickable-link" target="_blank">Click to Open Registration Page</a>
+<div id="image-frame">
+    <!-- Images will be dynamically loaded here -->
 </div>
 
-<div id="buttons-container">
-    <button id="previous-btn" onclick="showPreviousImage()"><b>PREVIOUS<b></button>
-    <button id="next-btn" onclick="showNextImage()"><b>NEXT SCREEN<b></button>
+<div id="controls">
+    <button onclick="prevImage()" id="prevBtn" style="display: none">PREVIOUS</button>
+    <button onclick="nextImage()" id="nextBtn" >NEXT SCREEN</button>
 </div>
 
 </div>
-<br>
-<br>
-<br>
+
 <script>
-  const imageLinks = [
-    "https://i.imgur.com/gIL8a4u.png",
+    const imageLinks = [
+        "https://i.imgur.com/gIL8a4u.png",
     "https://i.imgur.com/8QpoAxO.png",
     "https://i.imgur.com/dHkltd6.png",
     "https://i.imgur.com/AvrQp9O.png",
@@ -296,63 +275,34 @@
     "https://i.imgur.com/aAIjhG9.png",
     "https://i.imgur.com/6R2lUBb.png",
     "https://i.imgur.com/0n7pOMP.png"
-  ];
+    ];
 
-  let currentIndex = 0;
-  let isButtonDisabled = false;
-  const currentImage = document.getElementById('current-image');
-  const previousButton = document.getElementById('previous-btn');
-  const nextButton = document.getElementById('next-btn');
-  const clickableLink = document.getElementById('clickable-link');
-  const frame = document.getElementById('frame');
+    let currentIndex = 0;
+    const imageFrame = document.getElementById('image-frame');
+    const prevBtn = document.getElementById('prevBtn');
 
-  function showImage(index) {
-    currentImage.src = imageLinks[index];
-    currentIndex = index;
+    function showImage(index) {
+        imageFrame.innerHTML = `<img src="${imageLinks[index]}" alt="Image">`;
+        prevBtn.style.display = index > 0 ? 'block' : 'none';
+    }
 
-    previousButton.style.display = (currentIndex === 0) ? 'none' : 'block';
-    nextButton.style.display = (currentIndex === imageLinks.length - 1) ? 'none' : 'block';
-    clickableLink.style.display = (currentIndex === imageLinks.length - 1) ? 'block' : 'none';
-    frame.style.display = 'block';
-  }
-
-  function showNextImage() {
-    if (!isButtonDisabled) {
-      isButtonDisabled = true;
-      setTimeout(() => {
-        currentIndex = (currentIndex + 1) % imageLinks.length;
+    function prevImage() {
+        currentIndex = Math.max(0, currentIndex - 1);
         showImage(currentIndex);
-        isButtonDisabled = false;
-      }, 300);
     }
-  }
 
-  function showPreviousImage() {
-    if (!isButtonDisabled) {
-      isButtonDisabled = true;
-      setTimeout(() => {
-        currentIndex = (currentIndex - 1 + imageLinks.length) % imageLinks.length;
+    function nextImage() {
+        currentIndex = Math.min(imageLinks.length - 1, currentIndex + 1);
         showImage(currentIndex);
-        isButtonDisabled = false;
-      }, 300);
-    }
-  }
 
-  // Initial load with the first image
-  showImage(currentIndex);
-
-  // Event listeners
-  nextButton.addEventListener('click', function() {
-    if (currentIndex === imageLinks.length - 1) {
-      // Last image screen, reset to the first image
-      setTimeout(() => {
-        showImage(0);
-      }, 300);
-    } else {
-      // Normal next image
-      showNextImage();
+        if (currentIndex === imageLinks.length - 1) {
+            // Open the URL in a new tab when on the last screen
+            window.location.href = "https://rjsearn.github.io/wsa/regtest";
+        }
     }
-  });
+
+    showImage(currentIndex);  // Show the initial image
+
 </script>
 
 </body>
