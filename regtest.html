@@ -20,10 +20,21 @@
             margin-top: 20px;
             font-size: 20px;
             font-weight: bold;
+            font-color: #FF69B4;
             
         }
 
-        .responses {
+        h2 {
+            text-align: center;
+            color: #CD5C5C;
+        }
+ 
+         h3 {
+            text-align: center;
+            color: #CD5C5C;
+        }
+
+       .responses {
             margin-top: 25px;
             width: 720px;
             position: relative;
@@ -81,8 +92,7 @@
     }
 
     
-    #previousPageButton,
-    #nextPageButton {
+    #previousPageButton  {
       padding: 10px;
       font-size: 15px;
       font-weight: bold;
@@ -92,7 +102,7 @@
     }
 
     #previousPageButton {
-      background-color:#ff00a9;
+      background-color:#FF69B4;
       color: #fff;
       margin: left 20px;
       border: none;
@@ -100,14 +110,7 @@
       box-shadow: 1px 1px 0px  	#F5F5F5;
     }
 
-    #nextPageButton {
-      background-color: #4CAF50;
-      color: #fff;
-      border: none;
-      border: 1px solid #FFFFFF;
-      box-shadow: 1px 1px 0px  	#F5F5F5;
-      display: none;
-    }
+   
 
     </style>
 </head>
@@ -116,7 +119,8 @@
 <div id="frame">
 <br>
 
-        <H2>Before opening REGISTRATION-PAGE <br> Check your Understanding: Answer 4 questions </H2>
+        <H2> Before opening REGISTRATION-PAGE </H2><H3> Answer these 4 questions </H3>
+        
 <br>
 <br>
     <div id="question1" class="question">
@@ -152,27 +156,26 @@
     <div id="question4" class="question" style="display: none;">
         <p>Q4: KYC verification takes how many Hrs?</p>
         <div class="responses">
-            <button class="response-button" onclick="window.location.href='https://llpgpro.com/WSARegTB'">24 max</button>
+            <button class="response-button" onclick="window.location.href='https://rjsearn.github.io/wsa/openregpage'">24 max</button>
             <button class="response-button" onclick="showNotification()">36 hrs</button>
             <button class="response-button" onclick="showNotification()">48 max</button>
             <button class="response-button" onclick="showNotification()">3 days</button>
         </div>
     </div>
 <br>
-<div id="notification">Wrong Answer. Go back and See Screens again</div>
+<div id="notification">WRONG ANSWER. Go back and See Screens again. <br> Click the Button Below</div>
 <br>
 <br>
 
 <br>
 
+<br>
+
+</div>
 <br>
 <div id="buttons-container">
-    <button id="nextPageButton" onclick="window.location.href='https://llpgpro.com/WSARegTB'">Go to Registration Page</button>
-    <button id="previousPageButton" onclick="window.location.href='https://rjsearn.github.io/wsa/screens'">Go Back & See Screens Again</button>
+    <button id="previousPageButton" onclick="window.location.href='https://rjsearn.github.io/wsa/screens'"> Go back to Screens </button>
 </div>
-</div>
-
-
 
     <script>
         function showNotification() {
@@ -209,7 +212,6 @@
     </script>
 </body>
 </html>
-
 
 
 
