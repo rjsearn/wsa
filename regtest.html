@@ -14,13 +14,17 @@
             display: none;
             color: red;
             font-weight: bold;
+            position: relative;
+             margin-top: 25px;
         }
 
         .question {
-            margin-top: 20px;
-            font-size: 20px;
+            font-size: 25px;
             font-weight: bold;
             font-color: #FF69B4;
+            position: absolute;
+            margin-left: 12%;
+            text-align: left;
             
         }
 
@@ -38,13 +42,16 @@
             margin-top: 25px;
             width: 720px;
             position: relative;
+            margin-left: 7%;
         }
 
         .response-button {
             margin: 5px;
             padding: 5px;
             font-size: 14px;
-            width: 80px;
+            font-weight: bold;
+            width: 100px;
+            
             
         }
 
@@ -180,10 +187,9 @@
 
         <H2> Before opening REGISTRATION-PAGE </H2><H3> Answer these 4 questions </H3>
         
-<br>
-<br>
+
     <div id="question1" class="question">
-        <p>Q1: How many Total Steps you have to do?</p>
+        <p>Q1: How many Steps you have to Do?</p>
         <div class="responses">
             <button class="response-button" onclick="checkResponse(1, true)">4</button>
             <button class="response-button" onclick="showNotification()">3</button>
@@ -193,7 +199,7 @@
     </div>
 
     <div id="question2" class="question" style="display: none;">
-        <p>Q2: What is the name of 4th Step?</p>
+        <p>Q2: What is the name of the Last Step?</p>
         <div class="responses">
             <button class="response-button" onclick="showNotification()">Profile</button>
             <button class="response-button" onclick="showNotification()">Register</button>
@@ -213,22 +219,16 @@
     </div>
 
     <div id="question4" class="question" style="display: none;">
-        <p>Q4: KYC verification takes how many Hrs?</p>
+        <p>Q4: Can you do Registration without KYC?</p>
         <div class="responses">
-            <button class="response-button" onclick="window.location.href='https://rjsearn.github.io/wsa/openregpage'">24 max</button>
-            <button class="response-button" onclick="showNotification()">36 hrs</button>
-            <button class="response-button" onclick="showNotification()">48 max</button>
-            <button class="response-button" onclick="showNotification()">3 days</button>
+            <button class="response-button" onclick="window.location.href='https://rjsearn.github.io/wsa/openregpage'">No</button>
+            <button class="response-button" onclick="showNotification()">Yes</button>
+            <button class="response-button" onclick="showNotification()">Optional</button>
+            <button class="response-button" onclick="showNotification()">Later</button>
         </div>
     </div>
-<br>
-<div id="notification">WRONG ANSWER. Go back and See Screens again. <br> Click the Button Below</div>
-<br>
-<br>
-
-<br>
-
-<br>
+<br><br><br><br><br><br>
+<div id="notification"><br> WRONG ANSWER. <br><br> Go back and See Screens again. <br> Click the Button Below</div>
 
 </div>
 <br>
