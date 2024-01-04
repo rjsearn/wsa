@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Page</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            background-color: #FFFFF1; /* Gray background color */
+        }
+
+        #video-frame {
+            width: 720px;
+            height: 410px;
+            overflow: hidden;
+            border: 1px solid #ccc; /* 1px light grey border */
+            margin-bottom: 20px;
+            position: relative;
+            padding: 7px;
+            background-color: #FFFFF1;
+            border-radius: 15px;
+            box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            
+         }
+
+        #video {
+            width: 100%;
+            height: 100%;
+            position: center;
+            margin: auto;
+        }
+
+        #nextBtn {
+            display: none;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 7px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border: 1px solid #FFFFFF;
+            box-shadow: 1px 1px 0px #F5F5F5;
+            
+        }
+
+        #heading {
+            text-align: center;
+            margin-bottom: 22px;
+            padding: 10px;
+            font-family: cursive;
+            font-size: 28px;
+            font-weight: bold;
+            color: #FF2400;
+        }
+        
+        #Waitline {
+            text-align: center;
+            margin-bottom: 22px;
+            padding: 10px;
+            font-family: tahoma, sans-serif;
+            font-size: 18px;
+            color: #808080;
+        }
+    </style>
+</head>
+<body>
+<div id="heading">Play the Video & Understand "How to Register"</div>
+
+<div id="video-frame">
+     <iframe id="video" src="https://player.vimeo.com/video/889431026?h=fe5cedbae8" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<button id="nextBtn" onclick="redirectToPage()">Go to NEXT PAGE</button>
+<div id="Waitline">Wait.... When Video Ends, Next-Page Button will Appear Here... </div>
+
+
+<script>
+    setTimeout(function() {
+        document.getElementById('Waitline').style.display = 'none';
+        document.getElementById('nextBtn').style.display = 'block';
+    }, 165000);
+
+    function redirectToPage() {
+        window.location.href = 'https://rjsearn.github.io/wsa/screens';
+    }
+</script>
+
+</body>
+</html>
