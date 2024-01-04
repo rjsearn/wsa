@@ -209,7 +209,7 @@
     </div>
 
     <div id="question3" class="question" style="display: none;">
-        <p>Q3: Which doc is required for KYC?</p>
+        <p>Q3: One of the doc required for KYC?</p>
         <div class="responses">
             <button class="response-button" onclick="showNotification()">Phone</button>
             <button class="response-button" onclick="checkResponse(3, true)">Photo ID</button>
@@ -218,8 +218,19 @@
         </div>
     </div>
 
+    
     <div id="question4" class="question" style="display: none;">
-        <p>Q4: Can you do Registration without KYC?</p>
+        <p>Q4: Can you submit FAKE KYC doc?</p>
+        <div class="responses">
+            <button class="response-button" onclick="showNotification()">Good</button>
+            <button class="response-button" onclick="showNotification()">Choice</button>
+            <button class="response-button" onclick="showNotification()">Yes</button>
+            <button class="response-button" onclick="checkResponse(4, true)">No</button>
+        </div>
+    </div>
+
+    <div id="question5" class="question" style="display: none;">
+        <p>Q5: Can you do Registration without KYC?</p>
         <div class="responses">
             <button class="response-button" onclick="window.location.href='https://rjsearn.github.io/wsa/openregpage'">No</button>
             <button class="response-button" onclick="showNotification()">Yes</button>
