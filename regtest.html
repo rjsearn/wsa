@@ -134,15 +134,7 @@
   position: relative;
   text-decoration: none;
 }
-.telegram .tg-icon {
-  float: left;
-  width: 7px;
-  height: 8px;
-  background-size: cover;
-  background-image: url("https://qayoutube.com/telegram.svg");
-  position: relative;
-  z-index: 10;
-}
+
 .telegram .tg-text {
   overflow: hidden;
   color: #fff;
@@ -154,15 +146,6 @@
   z-index: 10;
   text-shadow: #FFBF00;
 }
-.telegram .cloud {
-  width: 7px;
-  height: 8px;
-  display: block;
-  background-size: cover;
-  background-image: url("https://qayoutube.com/cloud.svg");
-  position: absolute;
-}
-   
 
     </style>
 </head>
@@ -189,52 +172,72 @@
         
 
     <div id="question1" class="question">
-        <p>Q1: How many Steps you have to Do?</p>
+        <p>Q1: WSA Registration is for new Members ONLY?</p>
         <div class="responses">
-            <button class="response-button" onclick="checkResponse(1, true)">4</button>
+            <button class="response-button" onclick="showNotification()">Doubtful</button>
+            <button class="response-button" onclick="showNotification()">False</button>
+            <button class="response-button" onclick="checkResponse(1, true)">True</button>
+            <button class="response-button" onclick="showNotification()">Choice</button>
+        </div>
+    </div>
+    
+    <div id="question2" class="question" style="display: none;">
+        <p>Q2: What happens if you submit FAKE doc?</p>
+        <div class="responses">
+            <button class="response-button" onclick="checkResponse(2, true)">Fraud Case</button>
+            <button class="response-button" onclick="showNotification()">Award</button>
+            <button class="response-button" onclick="showNotification()">Nothing</button>
+            <button class="response-button" onclick="showNotification()">Allowed</button>
+        </div>
+    </div>
+    
+    <div id="question3" class="question">
+        <p>Q:3 How many Steps you have to Do for Registration?</p>
+        <div class="responses">
             <button class="response-button" onclick="showNotification()">3</button>
+            <button class="response-button" onclick="checkResponse(3, true)">4</button>
             <button class="response-button" onclick="showNotification()">1</button>
             <button class="response-button" onclick="showNotification()">5</button>
         </div>
     </div>
 
-    <div id="question2" class="question" style="display: none;">
-        <p>Q2: What is the name of the Last Step?</p>
+    <div id="question4" class="question" style="display: none;">
+        <p>Q4: What is the name of the Last Step?</p>
         <div class="responses">
             <button class="response-button" onclick="showNotification()">Profile</button>
             <button class="response-button" onclick="showNotification()">Register</button>
-            <button class="response-button" onclick="checkResponse(2, true)">KYC</button>
+            <button class="response-button" onclick="checkResponse(4, true)">KYC Submit</button>
             <button class="response-button" onclick="showNotification()">VerifyEmail</button>
         </div>
     </div>
 
-    <div id="question3" class="question" style="display: none;">
-        <p>Q3: Can you do Registration without KYC?</p>
+    <div id="question5" class="question" style="display: none;">
+        <p>Q5: Can you do Registration without KYC?</p>
         <div class="responses">
             <button class="response-button" onclick="showNotification()">May be</button>
             <button class="response-button" onclick="showNotification()">Choice</button>
             <button class="response-button" onclick="showNotification()">Yes</button>
-            <button class="response-button" onclick="checkResponse(3, true)">No</button>
+            <button class="response-button" onclick="checkResponse(5, true)">No</button>
         </div>
     </div>
     
-    <div id="question4" class="question" style="display: none;">
-        <p>Q4: One of the doc required for KYC?</p>
+    <div id="question6" class="question" style="display: none;">
+        <p>Q6: Which Document is required for KYC?</p>
         <div class="responses">
             <button class="response-button" onclick="showNotification()">Phone</button>
-            <button class="response-button" onclick="checkResponse(4, true)">Photo ID</button>
+            <button class="response-button" onclick="checkResponse(6, true)">Photo ID</button>
             <button class="response-button" onclick="showNotification()">Address</button>
             <button class="response-button" onclick="showNotification()">Degree</button>
         </div>
     </div>
 
-    <div id="question5" class="question" style="display: none;">
-        <p>Q5: What happens if you submit FAKE doc?</p>
+    <div id="question7" class="question" style="display: none;">
+        <p>Q7: Second proof required for KYC is?</p>
         <div class="responses">
-            <button class="response-button" onclick="checkResponse(5, true)">Fraud Case</button>
-            <button class="response-button" onclick="showNotification()">Award</button>
-            <button class="response-button" onclick="showNotification()">Nothing</button>
-            <button class="response-button" onclick="showNotification()">Allowed</button>
+            <button class="response-button" onclick="showNotification()">Address</button>
+            <button class="response-button" onclick="showNotification()">LegalPapers</button>
+            <button class="response-button" onclick="checkResponse(7, true)">Selfie</button>
+            <button class="response-button" onclick="showNotification()">Degree</button>
         </div>
     </div>
     
