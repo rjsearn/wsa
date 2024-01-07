@@ -168,90 +168,61 @@
 <div id="frame">
 <br>
 
-        <H2> Before opening NEXT-PAGE </H2><H3> Answer these questions </H3>
+        <H2> Before opening REGISTRATION-PAGE </H2><H3> Answer these questions </H3>
         
 
     <div id="question1" class="question">
-        <p>Q1: How many Steps you have to Do?</p>
+        <p>Q1: Have you Joined "Contact for Help"?</p>
         <div class="responses">
-            <button class="response-button" onclick="showNotification()">3</button>
-            <button class="response-button" onclick="showNotification()">2</button>
-            <button class="response-button" onclick="checkResponse(1, true)">4</button>
-            <button class="response-button" onclick="showNotification()">5</button>
+            <button class="response-button" onclick="showNotification()">Later</button>
+            <button class="response-button" onclick="showNotification()">No</button>
+            <button class="response-button" onclick="checkResponse(1, true)">Yes</button>
+            <button class="response-button" onclick="showNotification()">Not Needed</button>
         </div>
     </div>
     
     <div id="question2" class="question" style="display: none;">
-        <p>Q2: What is the name of the Last Step?</p>
+        <p>Q2: First TEXT PROOF you have to Submit is?</p>
         <div class="responses">
-            <button class="response-button" onclick="showNotification()">VerifyEmail</button>
-            <button class="response-button" onclick="showNotification()">Profile</button>
-            <button class="response-button" onclick="showNotification()">Register</button>
-            <button class="response-button" onclick="checkResponse(2, true)">KYC Submit</button>
+            <button class="response-button" onclick="showNotification()">Degree</button>
+            <button class="response-button" onclick="showNotification()">Address</button>
+            <button class="response-button" onclick="showNotification()">Mobile</button>
+            <button class="response-button" onclick="checkResponse(2, true)">Username</button>
         </div>
     </div>
     
     <div id="question3" class="question" style="display: none;">
-        <p>Q3: Can you do Registration without KYC?</p>
+        <p>Q3: Second TEXT PROOF you have to Submit is?</p>
         <div class="responses">
-            <button class="response-button" onclick="checkResponse(3, true)">No</button>
-            <button class="response-button" onclick="showNotification()">May be</button>
-            <button class="response-button" onclick="showNotification()">Choice</button>
-            <button class="response-button" onclick="showNotification()">Yes</button>
+            <button class="response-button" onclick="checkResponse(3, true)">SponsorName</button>
+            <button class="response-button" onclick="showNotification()">Email</button>
+            <button class="response-button" onclick="showNotification()">KYC</button>
+            <button class="response-button" onclick="showNotification()">Address</button>
             
         </div>
     </div>
     
      <div id="question4" class="question" style="display: none;">
-        <p>Q4: Which Document is required for KYC?</p>
+        <p>Q4: How much is your USD Wallet Balance</p>
         <div class="responses">
-            <button class="response-button" onclick="showNotification()">Phone</button>
-            <button class="response-button" onclick="checkResponse(4, true)">Photo ID</button>
-            <button class="response-button" onclick="showNotification()">Address</button>
-            <button class="response-button" onclick="showNotification()">Degree</button>
+            <button class="response-button" onclick="showNotification()">1 USD</button>
+            <button class="response-button" onclick="checkResponse(4, true)">2 USD</button>
+            <button class="response-button" onclick="showNotification()">0 USD</button>
+            <button class="response-button" onclick="showNotification()">1.5 USD</button>
         </div>
     </div>
 
     <div id="question5" class="question" style="display: none;">
-        <p>Q5: Second proof to be uploaded for KYC?</p>
+        <p>Q5: Screenshot proof is from which page?</p>
         <div class="responses">
-            <button class="response-button" onclick="showNotification()">Address</button>
-            <button class="response-button" onclick="showNotification()">LegalPapers</button>
-            <button class="response-button" onclick="checkResponse(5, true)">Selfie</button>
-            <button class="response-button" onclick="showNotification()">Degree</button>
+            <button class="response-button" onclick="showNotification()">Dashboard</button>
+            <button class="response-button" onclick="showNotification()">Email</button>
+            <button class="response-button" onclick="window.location.href='https://rjsearn.github.io/wsa/openregpage'">KYC</button>
+            <button class="response-button" onclick="showNotification()">USD Wallet</button>
         </div>
     </div>
     
-    <div id="question6" class="question" style="display: none;">
-        <p>Q6: What happens if KYC is Rejected?</p>
-        <div class="responses">
-            <button class="response-button" onclick="checkResponse(6, true)">Do Again</button>
-            <button class="response-button" onclick="showNotification()">Give Up</button>
-            <button class="response-button" onclick="showNotification()">Nothing</button>
-            <button class="response-button" onclick="showNotification()">Contact</button>
-        </div>
-    </div>
-
-    <div id="question7" class="question" style="display: none;">
-        <p>Q7: What happens if you submit FAKE doc?</p>
-        <div class="responses">
-            <button class="response-button" onclick="checkResponse(7, true)">Fraud Case</button>
-            <button class="response-button" onclick="showNotification()">Award</button>
-            <button class="response-button" onclick="showNotification()">Nothing</button>
-            <button class="response-button" onclick="showNotification()">Allowed</button>
-        </div>
-    </div>
-    
-    <div id="question8" class="question" style="display: none;">
-        <p>Q8: After KYC, Can you start Earning in WSA?</p>
-        <div class="responses">
-            <button class="response-button" onclick="showNotification()">No</button>
-            <button class="response-button" onclick="window.location.href='https://rjsearn.github.io/wsa/timescreens'">Yes</button>
-            <button class="response-button" onclick="showNotification()">May be</button>
-            <button class="response-button" onclick="showNotification()">Later</button>
-        </div>
-    </div>
- 
+   
 <br><br><br><br><br><br>
     
 <div id="notification"><br> WRONG ANSWER. <br><br> Go back and See Screens again. <br> Click the Button Below</div>
@@ -259,7 +230,7 @@
 </div>
 <br>
 <div id="buttons-container">
-    <button id="previousPageButton" onclick="window.location.href='https://rjsearn.github.io/wsa/regscreens'"> Go back to Screens </button>
+    <button id="previousPageButton" onclick="window.location.href='https://rjsearn.github.io/wsa/timecreens'"> Go back to Screens </button>
 </div>
 
     <script>
