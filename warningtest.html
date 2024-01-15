@@ -181,20 +181,10 @@
         </div>
     </div>
     
-    <div id="question2" class="question" style="display: none;">
-        <p>Q2: What happens if you use INVALID COUPON?</p>
+     <div id="question2" class="question" style="display: none;">
+        <p>Q2: What happens if you submit FAKE doc?</p>
         <div class="responses">
-            <button class="response-button" onclick="showNotification()">Awards</button>
-            <button class="response-button" onclick="showNotification()">Gifts</button>
-            <button class="response-button" onclick="showNotification()">Welcome</button>
-            <button class="response-button" onclick="checkResponse(2, true)">No Reward</button>
-        </div>
-    </div>
-    
-    <div id="question3" class="question" style="display: none;">
-        <p>Q3: What happens if you submit FAKE doc?</p>
-        <div class="responses">
-            <button class="response-button" onclick="checkResponse(3, true)">Fraud Case</button>
+            <button class="response-button" onclick="checkResponse(2, true)">Fraud Case</button>
             <button class="response-button" onclick="showNotification()">Awarded</button>
             <button class="response-button" onclick="showNotification()">Nothing</button>
             <button class="response-button" onclick="showNotification()">Allowed</button>
@@ -202,8 +192,19 @@
         </div>
     </div>
     
+    <div id="question3" class="question" style="display: none;">
+        <p>Q3: What happens if you use INVALID COUPON?</p>
+        <div class="responses">
+            <button class="response-button" onclick="showNotification()">It's OK</button>
+            <button class="response-button" onclick="showNotification()">Gifts</button>
+            <button class="response-button" onclick="showNotification()">Welcome</button>
+            <button class="response-button" onclick="checkResponse(3, true)">No Reward</button>
+        </div>
+    </div>
+    
+   
     <div id="question4" class="question" style="display: none;">
-        <p>Q4: If my Task is Incomplete, I will NOT be PAID?</p>
+        <p>Q4: If KYC is Rejected, I will NOT be PAID ?</p>
         <div class="responses">
             <button class="response-button" onclick="showNotification()">Can't Say</button>
             <button class="response-button" onclick="showNotification()">No</button>
@@ -214,10 +215,10 @@
     </div>
 
     <div id="question5" class="question" style="display: none;">
-        <p>Q5: If KYC is Rejected, I will NOT be PAID ?</p>
+        <p>Q5: If my Task is Incomplete, I will NOT be PAID?</p>
         <div class="responses">
             <button class="response-button" onclick="showNotification()">No</button>
-            <button class="response-button" onclick="window.location.href='https://rjsearn.github.io/wsa/regvideo'">Yes</button>
+            <button class="response-button" onclick="window.location.href='https://rjsearn.github.io/wsa/regvideo'">True</button>
             <button class="response-button" onclick="showNotification()">May be</button>
             <button class="response-button" onclick="showNotification()">Can't Say</button>
         </div>
