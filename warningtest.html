@@ -1,266 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quiz Page</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f8f9fa;
+}
 
-        #notification {
-            display: none;
-            color: red;
-            font-weight: bold;
-            position: relative;
-             margin-top: 25px;
-        }
-
-        .question {
-            font-size: 25px;
-            font-weight: bold;
-            font-color: #FF69B4;
-            position: absolute;
-            margin-left: 12%;
-            text-align: left;
-            
-        }
-
-        h2 {
-            text-align: center;
-            color: #CD5C5C;
-        }
- 
-         h3 {
-            text-align: center;
-            color: #CD5C5C;
-        }
-
-       .responses {
-            margin-top: 25px;
-            width: 720px;
-            position: relative;
-            margin-left: 7%;
-        }
-
-        .response-button {
-            margin: 5px;
-            padding: 5px;
-            font-size: 14px;
-            font-weight: bold;
-            width: 100px;
-            
-            
-        }
-
-       
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      flex-direction: column;
-      background-color: #FFFFF1; /* Gray background color */
-    }
-
-    #image-container {
-      text-align: center;
-      position: relative;
-    }
-
-    #frame {
-      width: 720px;
-      height: 420px;
-      overflow: hidden;
-      border: 1px solid #ccc; /* 1px light grey border */
-      margin-bottom: 20px;
-      position: relative;
-      padding: 7px;
-      background-color: #FFFFF1;
-      border-radius: 15px;
-      box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-
-    #image-container img {
-      max-width: 100%;
-      max-height: 100%;
-      display: block;
-      margin: auto;
-    }
-
-    #buttons-container {
-      display: flex;
-      max-width: 100%;
-      justify-content: space-between;
-      position: relative;
-    }
-
-    
-    #previousPageButton  {
-      padding: 10px;
-      font-size: 15px;
-      font-weight: bold;
-      border-radius: 7px;
-      cursor: pointer;
-      
-    }
-
-    #previousPageButton {
-      background-color:#FF69B4;
-      color: #fff;
-      margin: left 20px;
-      border: none;
-      border: 1px solid #FFFFFF;
-      box-shadow: 1px 1px 0px  	#F5F5F5;
-    }
+.container {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 16px;
+}
 
 .wrap {
-    margin:2px auto 0;
-    max-width: 350px;
-    margin-bottom: 20px;
+margin: 10px auto 0;
+max-width: 350px;
+margin-bottom: 16px;
 }
 
-.telegram {
-  margin-bottom: 10px;
-}
 .telegram a {
-  display: block;
-  background-color: #E9967A;
-  border-radius: 7px;
-  overflow: hidden;
-  position: relative;
-  text-decoration: none;
+display: block;
+background-color: #E9967A;
+border-radius: 8px;
+text-decoration: none;
+color: #fff;
+font-weight: bold;
+font-size: 15px;
+padding: 8px 12px;
+text-align: center;
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.telegram .tg-text {
-  overflow: hidden;
-  color: #fff;
-  font-size: 15px;
-  line-height: 18px;
-  font-weight: bold;
-  padding: 5px 5px;
-  position: relative;
-  z-index: 10;
-  text-shadow: #FFBF00;
+#quiz-card {
+width: 100%;
+max-width: 720px;
+background: #ffffff;
+border-radius: 16px;
+box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+padding: 24px;
+text-align: center;
 }
 
-    </style>
+h2 {
+color: #CD5C5C;
+margin-top: 0;
+margin-bottom: 6px;
+font-size: 24px;
+}
+
+h3 {
+color: #CD5C5C;
+margin-top: 0;
+margin-bottom: 20px;
+font-size: 18px;
+}
+
+.question-panel {
+text-align: left;
+margin: 0 auto;
+max-width: 720px;
+padding: 16px 0;
+}
+
+.question {
+font-size: 18px;
+font-weight: bold;
+color: #CD5C5C;
+margin-bottom: 12px;
+line-height: 1.4;
+}
+
+.responses {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 10px;
+}
+
+.response-button {
+padding: 10px 16px;
+font-size: 14px;
+font-weight: bold;
+border-radius: 6px;
+border: 1px solid #ddd;
+background: #f0f0f0;
+color: #333;
+cursor: pointer;
+min-width: 120px;
+flex: 1 1 40%;
+}
+
+.response-button:hover {
+background: #e0e0e0;
+}
+
+#notification {
+display: none;
+color: #c62828;
+font-weight: bold;
+font-size: 16px;
+margin-top: 16px;
+padding: 12px 16px;
+border-radius: 8px;
+background-color: #ffebee;
+border: 1px solid #ffcdd2;
+}
+
+#buttons-container {
+margin-top: 24px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 12px;
+}
+
+#previousPageButton,
+#nextPageButton {
+padding: 10px 18px;
+font-size: 15px;
+font-weight: bold;
+border-radius: 8px;
+border: none;
+box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+cursor: pointer;
+}
+
+#previousPageButton {
+background-color: #FF69B4;
+color: #fff;
+}
+
+#nextPageButton {
+background-color: #32CD32;
+color: #fff;
+display: none;
+}
+
+@media (max-width: 768px) {
+#quiz-card {
+padding: 16px;
+}
+.response-button {
+flex: 1 1 90%;
+}
+}
+</style>
 </head>
 <body>
- 
+<div class="container">
 
 <div class="wrap">
 <div class="telegram">
-  <a href="https://t.me/+ATdWQ5nmfPcxZGJl" target="_blank">
-    <div class="tg-icon"></div>
-    <div class="tg-text">Contact for HELP & After KYC Earning</div>
-  </a>
+<a href="https://t.me/+ATdWQ5nmfPcxZGJl" target="_blank">
+Contact for HELP & After KYC Earning
+</a>
 </div>
 </div>
 
-<br>
+<div id="quiz-card">
 
+<h2>To open NEXT PAGE</h2>
+<h3>Answer these questions</h3>
 
-   
-<div id="frame">
-<br>
+<div class="question-panel" id="question1">
+<div class="question">
+Q1: WSA registration is for NEW MEMBERs ONLY?
+</div>
+<div class="responses">
+<button class="response-button" onclick="showNotification()">Doubtful</button>
+<button class="response-button" onclick="showNotification()">False</button>
+<button class="response-button" onclick="checkResponse(1, true)">True</button>
+<button class="response-button" onclick="showNotification()">Choice</button>
+</div>
+</div>
 
-        <H2> To open NEXT PAGE </H2><H3> Answer these questions </H3>
-        
+<div class="question-panel" id="question2" style="display: none;">
+<div class="question">
+Q2: What happens if you submit FAKE doc?
+</div>
+<div class="responses">
+<button class="response-button" onclick="checkResponse(2, true)">Fraud Case</button>
+<button class="response-button" onclick="showNotification()">Awarded</button>
+<button class="response-button" onclick="showNotification()">Nothing</button>
+<button class="response-button" onclick="showNotification()">Allowed</button>
+</div>
+</div>
 
-    <div id="question1" class="question">
-        <p>Q1: WSA registration is for NEW MEMBERs ONLY?</p>
-        <div class="responses">
-            <button class="response-button" onclick="showNotification()">Doubtful</button>
-            <button class="response-button" onclick="showNotification()">False</button>
-            <button class="response-button" onclick="checkResponse(1, true)">True</button>
-            <button class="response-button" onclick="showNotification()">Choice</button>
-        </div>
-    </div>
-    
-     <div id="question2" class="question" style="display: none;">
-        <p>Q2: What happens if you submit FAKE doc?</p>
-        <div class="responses">
-            <button class="response-button" onclick="checkResponse(2, true)">Fraud Case</button>
-            <button class="response-button" onclick="showNotification()">Awarded</button>
-            <button class="response-button" onclick="showNotification()">Nothing</button>
-            <button class="response-button" onclick="showNotification()">Allowed</button>
-            
-        </div>
-    </div>
-    
-  
-    <div id="question3" class="question" style="display: none;">
-        <p>Q4: If KYC is Rejected, You will NOT be PAID ?</p>
-        <div class="responses">
-            <button class="response-button" onclick="showNotification()">Can't Say</button>
-            <button class="response-button" onclick="showNotification()">No</button>
-            <button class="response-button" onclick="checkResponse(4, true)">True</button>
-            <button class="response-button" onclick="showNotification()">My Choice</button>
-            
-        </div>
-    </div>
+<div class="question-panel" id="question3" style="display: none;">
+<div class="question">
+Q3: If KYC is Rejected, You will NOT be PAID?
+</div>
+<div class="responses">
+<button class="response-button" onclick="showNotification()">Can't Say</button>
+<button class="response-button" onclick="showNotification()">No</button>
+<button class="response-button" onclick="checkResponse(3, true)">True</button>
+<button class="response-button" onclick="showNotification()">My Choice</button>
+</div>
+</div>
 
-    <div id="question4" class="question" style="display: none;">
-        <p>Q5: If your Task is Incomplete, You will NOT be PAID?</p>
-        <div class="responses">
-            <button class="response-button" onclick="showNotification()">No</button>
-            <button class="response-button" onclick="window.location.href='https://rjsearn.github.io/wsa/regvideo'">True</button>
-            <button class="response-button" onclick="showNotification()">May be</button>
-            <button class="response-button" onclick="showNotification()">Can't Say</button>
-        </div>
-    </div>
- 
-<br><br><br><br><br><br>
-    
-<div id="notification"><br> WRONG ANSWER. <br><br> Go back and Read WARNINGS again. <br> Click the Button Below</div>
+<div class="question-panel" id="question4" style="display: none;">
+<div class="question">
+Q4: If your Task is Incomplete, You will NOT be PAID?
+</div>
+<div class="responses">
+<button class="response-button" onclick="showNotification()">No</button>
+<button class="response-button" onclick="checkResponse(4, true)">True</button>
+<button class="response-button" onclick="showNotification()">May be</button>
+<button class="response-button" onclick="showNotification()">Can't Say</button>
+</div>
+</div>
+
+<div id="notification">
+WRONG ANSWER. Go back and Read WARNINGS again. Click the Button Below
+</div>
 
 </div>
-<br>
+
 <div id="buttons-container">
-    <button id="previousPageButton" onclick="window.location.href='https://llpgpro.com/WSARegWarnings/'"> Go back to WARNINGS Page </button>
+<button id="previousPageButton"
+onclick="window.location.href='https://llpgpro.com/WSARegWarnings/'">
+Go back to WARNINGS Page
+</button>
+<button id="nextPageButton"
+onclick="window.location.href='https://rjsearn.github.io/wsa/regvideo'">
+Go to Registration Page
+</button>
 </div>
 
-    <script>
-        function showNotification() {
-            document.getElementById('notification').style.display = 'block';
-        }
+</div>
 
-        function hideNotification() {
-            document.getElementById('notification').style.display = 'none';
-        }
+<script>
+function showNotification() {
+document.getElementById('notification').style.display = 'block';
+}
 
-        function checkResponse(questionNumber, isCorrect) {
-            hideNotification();
+function hideNotification() {
+document.getElementById('notification').style.display = 'none';
+}
 
-            // Hide the current question
-            document.getElementById('question' + questionNumber).style.display = 'none';
+function checkResponse(questionNumber, isCorrect) {
+hideNotification();
 
-            if (isCorrect) {
-                // If correct, show the next question
-                var nextQuestionNumber = questionNumber + 1;
-                var nextQuestion = document.getElementById('question' + nextQuestionNumber);
-                if (nextQuestion) {
-                    nextQuestion.style.display = 'block';
-                } else {
-                    // If there are no more questions, show the NextPage button
-                    document.getElementById('nextPageButton').style.display = 'block';
-                }
-            } else {
-                // If wrong, show the notification
-                showNotification();
-            }
+// Hide the current question
+document.getElementById('question' + questionNumber).style.display = 'none';
 
-   
-        }
-    </script>
+if (isCorrect) {
+// If correct, show the next question
+var nextQuestionNumber = questionNumber + 1;
+var nextQuestion = document.getElementById('question' + nextQuestionNumber);
+if (nextQuestion) {
+nextQuestion.style.display = 'block';
+} else {
+// If there are no more questions, show the NextPage button
+document.getElementById('nextPageButton').style.display = 'block';
+}
+} else {
+// If wrong, show the notification
+showNotification();
+}
+}
+</script>
 </body>
 </html>
-
-
-
-
-
