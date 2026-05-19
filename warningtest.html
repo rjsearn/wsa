@@ -5,12 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Quiz Page</title>
 <style>
+:root {
+--bg-color: #f9f7f9;
+--card-bg: #ffffff;
+--text-dark: #444444;
+--text-light: #666666;
+--pink: #ff6b8b;
+--pink-light: #ffd7e1;
+--green: #32cd32;
+--border: #e0e0e0;
+}
+
 body {
-font-family: Arial, sans-serif;
 margin: 0;
 padding: 0;
-background-color: #f0f2f5;
-color: #333;
+font-family: 'Segoe UI', Arial, sans-serif;
+background-color: var(--bg-color);
+color: var(--text-dark);
 }
 
 .container {
@@ -18,30 +29,44 @@ min-height: 100vh;
 display: flex;
 flex-direction: column;
 align-items: center;
-padding: 16px;
+padding: 16px 12px;
 }
 
-.progress-bar {
+/* Progress bar */
+.progress-wrap {
 width: 100%;
 max-width: 720px;
-margin: 16px auto 24px;
-padding: 6px 10px;
-background-color: #e0e0e0;
-border-radius: 12px;
-text-align: center;
-font-size: 16px;
-font-weight: bold;
-color: #555;
+margin: 12px auto 16px;
 }
 
 .progress-text {
-color: #0066cc;
+margin-bottom: 6px;
+text-align: center;
+font-size: 15px;
+font-weight: bold;
+color: #888;
 }
 
+.progress-bar-outer {
+height: 6px;
+background-color: var(--border);
+border-radius: 3px;
+overflow: hidden;
+}
+
+.progress-bar-inner {
+height: 100%;
+width: 25%; /* 1/4 */
+background-color: var(--pink);
+border-radius: 3px;
+transition: width 0.3s ease;
+}
+
+/* Telegram box */
 .wrap {
 margin: 10px auto 0;
 max-width: 350px;
-margin-bottom: 16px;
+margin-bottom: 12px;
 }
 
 .telegram a {
@@ -54,42 +79,45 @@ font-weight: bold;
 font-size: 15px;
 padding: 8px 12px;
 text-align: center;
-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+box-shadow: 0 2px 4px rgba(0,0,0,0.12);
 }
 
+/* Main quiz card */
 #quiz-card {
 width: 100%;
 max-width: 720px;
-background: #ffffff;
-border-radius: 16px;
-box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-padding: 24px;
+background: var(--card-bg);
+border-radius: 20px;
+box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+padding: 28px 24px;
 text-align: center;
 }
 
 h2 {
-color: #CD5C5C;
-margin: 6px 0 8px;
+margin: 0 0 6px 0;
 font-size: 22px;
+font-weight: 600;
+color: #d32f2f;
 }
 
 h3 {
-color: #CD5C5C;
-margin: 4px 0 18px;
-font-size: 18px;
+margin: 4px 0 20px;
+font-size: 17px;
+color: #d32f2f;
+font-weight: 500;
 }
 
 .question-panel {
 text-align: left;
 margin: 0 auto;
 max-width: 720px;
-padding: 16px 0;
+padding: 16px 0 8px;
 }
 
 .question {
 font-size: 18px;
-font-weight: bold;
-color: #CD5C5C;
+font-weight: 600;
+color: #d32f2f;
 margin-bottom: 12px;
 line-height: 1.4;
 }
@@ -104,32 +132,40 @@ gap: 10px;
 .response-button {
 padding: 10px 16px;
 font-size: 14px;
-font-weight: bold;
-border-radius: 6px;
-border: 1px solid #ddd;
-background: #f0f0f0;
+font-weight: 600;
+border-radius: 8px;
+border: 1px solid var(--border);
+background: #f7f7f7;
 color: #333;
 cursor: pointer;
 min-width: 120px;
 flex: 1 1 40%;
+transition: all 0.2s ease;
 }
 
 .response-button:hover {
-background: #e0e0e0;
+background: #f0f0f0;
+transform: translateY(-1px);
 }
 
+.response-button:active {
+transform: translateY(0);
+}
+
+/* Wrong answer notification */
 #notification {
 display: none;
-color: #c62828;
-font-weight: bold;
-font-size: 16px;
-margin-top: 16px;
-padding: 12px 16px;
+padding: 14px 16px;
 border-radius: 8px;
-background-color: #ffebee;
+margin-top: 14px;
+font-weight: bold;
+font-size: 15px;
+color: #c62828;
 border: 1px solid #ffcdd2;
+background-color: #ffebee;
 }
 
+/* Action buttons (Back / Next) */
 #buttons-container {
 margin-top: 24px;
 display: flex;
@@ -140,31 +176,41 @@ gap: 12px;
 
 #previousPageButton,
 #nextPageButton {
-padding: 10px 18px;
+padding: 10px 22px;
 font-size: 15px;
-font-weight: bold;
-border-radius: 8px;
+font-weight: 600;
+border-radius: 10px;
 border: none;
-box-shadow: 0 2px 4px rgba(0,0,0,0.15);
 cursor: pointer;
+box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+transition: transform 0.15s ease;
+}
+
+#previousPageButton:active,
+#nextPageButton:active {
+transform: scale(0.98);
 }
 
 #previousPageButton {
-background-color: #FF69B4;
+background-color: var(--pink);
 color: #fff;
 }
 
 #nextPageButton {
-background-color: #32CD32;
+background-color: var(--green);
 color: #fff;
 display: none;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
 #quiz-card {
-padding: 16px;
+padding: 18px 16px;
 }
-.progress-bar {
+.progress-wrap {
+margin: 12px auto 12px;
+}
+.progress-text {
 font-size: 14px;
 }
 .response-button {
@@ -176,8 +222,14 @@ flex: 1 1 90%;
 <body>
 <div class="container">
 
-<div class="progress-bar">
-STEP <span id="currentStep" class="progress-text">1</span> / <span id="totalSteps">4</span>
+<!-- Progress bar -->
+<div class="progress-wrap">
+<div class="progress-text">
+QUESTION <span id="currentStep">1</span> / <span id="totalSteps">4</span>
+</div>
+<div class="progress-bar-outer">
+<div id="progressBarInner" class="progress-bar-inner"></div>
+</div>
 </div>
 
 <div class="wrap">
@@ -273,7 +325,9 @@ document.getElementById('notification').style.display = 'none';
 }
 
 function updateProgress() {
+const progress = document.getElementById('progressBarInner');
 document.getElementById('currentStep').textContent = currentStep;
+progress.style.width = (currentStep / totalSteps * 100) + '%';
 }
 
 function checkResponse(questionNumber, isCorrect) {
@@ -301,8 +355,11 @@ showNotification();
 }
 }
 
-// initial state
+// init
 updateProgress();
 </script>
 </body>
 </html>
+
+Pro
+Free preview limit reached. Now using basic search.
